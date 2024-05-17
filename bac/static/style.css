@@ -9,6 +9,7 @@ body {
 
 .dropdown-menu {
   background-color: #f58870 !important;
+  font-size: small !important;
   }
 
 .nav-item{
@@ -17,7 +18,7 @@ body {
 }
 .nav-item a {
   font-family: Baskerville !important;
-  font-size: larger;
+  font-size: medium !important;
   color: white !important;
 
 }
@@ -32,13 +33,13 @@ body {
 
 .industries-dropdown, .capabilities-dropdown{
   column-count: 3;
-  margin-bottom: 20px;    
+  margin-bottom: 16px;
 }
 
 .about-dropdown{
-  width: 250% !important;
-  margin-bottom: 20px;
+  width: 250%;
 }
+
 
 .industries-dropdown li, .capabilities-dropdown li{
   padding: 2%;
@@ -50,7 +51,7 @@ body {
 }
 
 .dropdown-second-item{
-  font-size: medium;
+  font-size: small;
     text-decoration: none;
     color: unset; 
 
@@ -113,13 +114,12 @@ body {
 }
 
 @media (max-width: 992px) {
-  .industries-dropdown, .capabilities-dropdown, about-dropdown{
+  .industries-dropdown, .capabilities-dropdown, .about-dropdown{
       column-count: 1;
       padding: 0%;
       width: 100% !important;
       overflow: hidden;
       font-size: x-small;
-     
       
   }
 
@@ -136,11 +136,12 @@ body {
 
   .logo{
     font-size: medium !important;
+    margin-top: -1% !important;
   }
 
 
   .nav-item a {
-    font-size: medium;
+    font-size: small;
   
   }
 
@@ -148,7 +149,7 @@ body {
     padding: 0%;
     width: 100% !important;
     overflow: hidden;
-    font-size: medium !important;
+    font-size: small !important;
   
   } 
 

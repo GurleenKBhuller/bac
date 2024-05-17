@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>BAC</title>
 
     <link rel="stylesheet" href="{% static 'style.css' %}" />
@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg  navbar-dark" style="padding-left: 10px; background-color: #FD2D00 !important; height:12vh;">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <a class="navbar-brand logo" href="#" style="font-family: baskerville; color: white; font-size: x-large; border-left: 2px solid white; padding:8px">
+        <a class="navbar-brand logo" href="#" style="font-family: baskerville; color: white; font-size: medium; border-left: 2px solid white; padding:8px">
           {% comment %} <img src="{% static 'logo.png' %}" alt="Logo" id="logo" /> {% endcomment %}
 
           <font style="font-weight: 500; margin-right: 10px;">
@@ -42,7 +42,7 @@
             </li>
             <li class="nav-item dropdown" style="color: white;">
               <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Industries</a>
-              <ul class="dropdown-menu industries-dropdown" style="left: -220% !important;">
+              <ul class="dropdown-menu industries-dropdown" style="left: -280% !important;">
                 <li>
                   <a class="dropdown-item" href="#">Agriculture</a>
                 </li>
@@ -144,7 +144,6 @@
               <a class="nav-link dropdown-toggle {% if request.path == '/about/' %}active{% endif %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">About us</a>
               <ul class="dropdown-menu about-dropdown dropdown-menu-sm-start">
                 <li>
-                    
                   <a class="dropdown-item" href="{% url 'about' %}">Who we are</a>
                   <ul style="list-style-type: none;">
                     <a class="dropdown-second-item" href="#"><li class="dropdown-second-item">Our Mission, Vision, and Values</li></a>

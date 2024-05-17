@@ -2,149 +2,172 @@
 {% load static %}
 
 
+
  {% block content %}
  <style>
-    
-    .animated-line {
-      position: relative;
-      width: 100%;
-      height: 15vh;
-    }
-    
-    .line {
-        margin-top: 10%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 2px;
-        height: 200%;
-        background-color: black;
-    }
-    
-    .text-container {
-    margin-left: 1%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      height: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: flex-start;
-    }
-    
-    .text {
-        margin-top:2%;
-      visibility: hidden;
-      opacity: 0;
-      animation: text-animation 3s linear forwards;
-      white-space: nowrap;
-      font-size: 40px;
-      font-weight: 200;
-    }
-    
-    .text:nth-child(1) {
-      animation-delay: .5s;
-    }
-    
-    .text:nth-child(2) {
-      animation-delay: 1.5s;
-    }
-    
-    .text:nth-child(3) {
-      animation-delay: 2.5s;
-    }
-    
-    @keyframes text-animation {
-      0% {
-        visibility: hidden;
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-    
-      8% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-      }
-    
-      100% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
+  .serve{
+    padding-left: 1%;
+    color: white !important;
+    font-size: 11vmax;
+    font-weight: bold;
+    margin-bottom:-5% !important;
+  }
+  #businesses{
+    padding-bottom: .5%;
+  }
 
-    div.vertical-line{
-        width: 1px; /* Line width */
-        background-color: black; /* Line color */
-        height: 100%; 
-      }
+  @keyframes textChange {
+    0% {
+      content: "Agriculture";
+  }
+  6.67% {
+      content: "Auto, EV & Power Systems";
+  }
+  13.33% {
+      content: "CG & Apparel";
+  }
+  20% {
+      content: "Education";
+  }
+  26.67% {
+      content: "Energy";
+  }
+  33.33% {
+      content: "Industrial";
+  }
+  40% {
+      content: "Metals & Mining";
+  }
+  46.67% {
+      content: "Oil & Gas";
+  }
+  53.33% {
+      content: "PI & PE";
+  }
+  60% {
+      content: "Real Estate";
+  }
+  66.67% {
+      content: "Retail";
+  }
+  73.33% {
+      content: "Communications";
+  }
+  80% {
+      content: "Travel & Tourism";
+  }
+  86.67% {
+      content: "Logistics";
+  }
+  93.33% {
+      content: "BUSINESSES";
+  }
+  100% {
+      content: "BUSINESSES";
+  }
+}
 
-      .two-column-div {
-        column-count: 2;
-       }
-    </style>
-    
-   <div class="two-column-div" style="margin-left: 2%; padding-top: 2%; overflow: hidden;">
-    <div>
+#businesses::before {
+    content: "Agriculture";
+    animation: textChange 5s steps(15, end) forwards;
+}
 
-        <h1>We are <b>BAC</b></h1>
-        <div style="padding: 10px; font-size: xx-large;">We believe in your success and that right strategy can help you achieve the best
-             results for your business, regardless of your field or target market. </div>
+
+
+.mv{
+  background-image: url({%static 'mission.png' %});
+  background-size:100% 100%; 
+  margin-top: 5% !important;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.fade {
+  margin: 50px;
+  padding: 50px;
+  background-color: lightgreen;
+  transition: opacity 0.7s ease-in;
+}
+
+.centered-div {
+  opacity: 0; /* Initially set opacity to 0 */
+  width: 80%;
+  height: auto;
+  margin: 10% auto; /* Center the element */
+  padding: 2%;
+  background: #f58870;
+  color: white;
+  border-radius: 2%;
+  transition: opacity 0.7s ease, transform 0.7s ease; /* Add transition for smooth fade-in/out and transform */
+  transform: translateY(50px); /* Initially move the element down by 50 pixels */
+}
+
+.fadeIn {
+  opacity: 85% !important; /* Ensure fade-in class overrides opacity */
+  transform: translateY(0); /* Move the element back to its original position */
+}
+
+.fadeOut {
+  opacity: 0 !important; /* Ensure fade-out class overrides opacity */
+  transform: translateY(50px); /* Move the element down by 50 pixels to hide */
+}
+
+@media (max-width: 992px) {
+  .mv{
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div>  
+  <div class="main" style="background-color: #FD2D00;">
+    <div class="serve">WE</div>
+    <div class="serve">SERVE</div>
+    <div class="serve" id="businesses"></div>
+  </div>
+  <div class="mv">
+    <div class="centered-div fade fadeOut">
+      <h1>Our Mission</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nihil rem alias sit magnam atque quaerat voluptates placeat veritatis illo repellat dignissimos nulla optio doloribus neque, ipsum quibusdam pariatur harum?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos repudiandae iusto ipsa. Neque accusantium vel a error corrupti architecto dolore sequi! Nihil ipsa obcaecati eveniet iste harum. Cumque, repudiandae eligendi.
+      </p>
     </div>
-    <div class="animated-line">
-        <div class="line"></div>
-        <div class="text-container">
-          <div class="text">BUSINESS.</div>
-          <div class="text">ADVISORY.</div>
-          <div class="text">CONSULTING.</div>
-        </div>
-      </div>
-   </div>
-    
-
-    {% comment %} <!-- about us-->
-   <div style="height: 85vh;">
-
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    <div class="content" style="position: absolute;">
-      <h1><b>ABOUT BAC</b></h1>
-      <h3>We believe in your success and that right
-         strategy can help you achieve the best results for your business, 
-         regardless of your field or target market. </h3>
+    <div class="centered-div fade fadeOut">
+      <h1>Our Vision</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nihil rem alias sit magnam atque quaerat voluptates placeat veritatis illo repellat dignissimos nulla optio doloribus neque, ipsum quibusdam pariatur harum?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos repudiandae iusto ipsa. Neque accusantium vel a error corrupti architecto dolore sequi! Nihil ipsa obcaecati eveniet iste harum. Cumque, repudiandae eligendi.
+      </p>
     </div>
-
-
-   </div>
-
-<!-- mission, vision and values-->
-
-<div class="card-group">
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title"><b>Our Mission</b></h1>
-        <h4 class="card-text">We help companies comb through all the strategic data and realize otherwise hidden trends, opportunities and threats to their business.</h4>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title"><b>Our Vision</b></h1>
-        <h4 class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident reiciendis velit sit ratione voluptas suscipit illo? Magni eveniet similique veritatis enim corrupti, quisquam hic. Exercitationem saepe cumque dicta qui quasi?</h4>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title"><b>Our Values</b></h1>
-        <h4 class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi cupiditate vero iste obcaecati eum, omnis esse vitae eos, earum sint quidem quasi praesentium modi itaque dolorum inventore porro pariatur?</h4>
-      </div>
-    </div> {% endcomment %}
   </div>
 
 </div>
+
+<script>
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.7
+  };
+  
+  function observerCallback(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // fade in observed elements that are in view
+        entry.target.classList.add('fadeIn');
+        entry.target.classList.remove('fadeOut');
+      } else {
+        // fade out observed elements that are not in view
+        entry.target.classList.add('fadeOut');
+        entry.target.classList.remove('fadeIn');
+      }
+    });
+  }
+  
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  
+  const fadeElms = document.querySelectorAll('.fade');
+  fadeElms.forEach(el => observer.observe(el));
+  
+</script>
 {% endblock  %}
