@@ -111,9 +111,67 @@
   transform: translateY(50px); /* Move the element down by 50 pixels to hide */
 }
 
+
+@keyframes scroll {
+  0% {
+      transform: translateY(100%);
+  }
+  100% {
+      transform: translateY(-100%);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scrolling-text {
+  opacity: 0;
+  transform: scale(0.5) translateY(-300px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scrolling-text.visible {
+  animation: bounceIn 1s forwards;
+  opacity:1;
+  transform: scale(1) translateY(0); 
+}
+
+.counts{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  color:#FD2D00;
+  font-weight: bold;
+ 
+  padding:2%;
+}
+.value{
+  font-size: 6em;
+}
+.value2{
+  font-size: 1.5em;
+  color:#f58870;
+}
+
 @media (max-width: 992px) {
-  .mv{
-    grid-template-columns: 1fr;
+  .counts{
+    grid-template-columns: none; 
+      grid-template-rows: 1fr 1fr 1fr;
+      
   }
 }
 </style>
@@ -124,24 +182,49 @@
     <div class="serve">SERVE</div>
     <div class="serve" id="businesses"></div>
   </div>
-  <div class="mv">
-    <div class="centered-div fade fadeOut">
-      <h1>Our Mission</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nihil rem alias sit magnam atque quaerat voluptates placeat veritatis illo repellat dignissimos nulla optio doloribus neque, ipsum quibusdam pariatur harum?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos repudiandae iusto ipsa. Neque accusantium vel a error corrupti architecto dolore sequi! Nihil ipsa obcaecati eveniet iste harum. Cumque, repudiandae eligendi.
-      </p>
+  
+  <div class="counts">
+    <div>
+    <div class="value">100</div>
+    <div class="value2">Highly skilled and spirited professionals</div>
     </div>
-    <div class="centered-div fade fadeOut">
-      <h1>Our Vision</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nihil rem alias sit magnam atque quaerat voluptates placeat veritatis illo repellat dignissimos nulla optio doloribus neque, ipsum quibusdam pariatur harum?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos repudiandae iusto ipsa. Neque accusantium vel a error corrupti architecto dolore sequi! Nihil ipsa obcaecati eveniet iste harum. Cumque, repudiandae eligendi.
-      </p>
+    <div>
+    <div class="value">100</div>
+    <div class="value2">Projects Successfully Delivered Last Year</div>
     </div>
+    <div>
+    <div class="value">100</div>
+    <div class="value2">Key Industries</div>
+    </div>
+  </div>
+
+  <div class="main scrolling-text" style="background-color: #121020;text-align: center;">
+    <div style="color:#FD2D00; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;">ABOUT</div>
+    <div style="color: white; font-size: 3em; padding: 4%; text-align: center;"><b>We provide wise guidance to clients and partners!</b></div>
+    <div style="color:white; font-size: 1.5em; padding-left:2%; padding-right: 2%; padding-bottom:3%; font-style: italic;">We aspire to help clients thrive, on their terms, so that they can enable their shareholders, employees, communities and partners to flourish.</div>
   </div>
 
 </div>
 
 <script>
+  function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+  
+  const obj = document.getElementsByClassName("value");
+  for(var i=0; i < obj.length; i++){
+    animateValue(obj[i], 0, 100, 5000);
+  }
+
   const observerOptions = {
     root: null,
     rootMargin: "0px",
@@ -162,10 +245,35 @@
     });
   }
   
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-  
-  const fadeElms = document.querySelectorAll('.fade');
-  fadeElms.forEach(el => observer.observe(el));
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const mainElement = document.querySelector('.scrolling-text');
+
+        function checkVisibility() {
+          const rect = mainElement.getBoundingClientRect();
+          const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+
+          // Check if the bottom of the element is in the viewport
+          if (rect.bottom <= windowHeight && rect.bottom >= 0) {
+              mainElement.classList.add('visible');
+              window.removeEventListener('scroll', checkVisibility);
+          }
+      }
+
+      function onScroll() {
+          checkVisibility();
+      }
+
+      window.addEventListener('scroll', onScroll);
+
+      // Initial check in case the element is already in view after a slight delay
+      setTimeout(checkVisibility, 100);
+  });
+
+
   
 </script>
 {% endblock  %}
