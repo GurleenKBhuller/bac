@@ -138,17 +138,28 @@
   }
 }
 
-.scrolling-text {
+.scrolling-left {
   opacity: 0;
-  transform: scale(0.5) translateY(-300px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
-.scrolling-text.visible {
-  animation: bounceIn 1s forwards;
-  opacity:1;
-  transform: scale(1) translateY(0); 
+.scrolling-left.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
+
+.scrolling-right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.scrolling-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 .counts{
   display:grid;
@@ -167,11 +178,54 @@
   color:#f58870;
 }
 
+.ourvalues{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+
+.innervalues {
+  margin:2%;
+  border: 1px;
+  align-items: center;
+  background-color: #121020;
+  border-radius: 4px;
+  border-width: 0;
+  padding:5%;
+  padding-top:10% !important;
+  text-align: center;
+  font-size: 1.2em;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#464648 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #f58870;
+  cursor: pointer;
+  justify-content: center;
+}
+{% comment %} 
+.empathy:focus {
+  box-shadow: #464648 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #464648 0 -3px 0 inset;
+}
+
+.empathy:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #464648 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.empathy:active {
+  box-shadow: #464648 0 3px 7px inset;
+  transform: translateY(2px);
+} {% endcomment %}
+
 @media (max-width: 992px) {
   .counts{
     grid-template-columns: none; 
       grid-template-rows: 1fr 1fr 1fr;
       
+  }
+  .ourvalues{
+    grid-template-columns: none; 
+      grid-template-rows: 1fr 1fr;
   }
 }
 </style>
@@ -197,14 +251,56 @@
     <div class="value2">Key Industries</div>
     </div>
   </div>
-
-  <div class="main scrolling-text" style="background-color: #121020;text-align: center;">
-    <div style="color:#FD2D00; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;">ABOUT</div>
+  <div class="main scrolling-left" style="background-color: #121020;text-align: center;">
+    <div style="color:#FD2D00; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;">ABOUT US</div>
     <div style="color: white; font-size: 3em; padding: 4%; text-align: center;"><b>We provide wise guidance to clients and partners!</b></div>
     <div style="color:white; font-size: 1.5em; padding-left:2%; padding-right: 2%; padding-bottom:3%; font-style: italic;">We aspire to help clients thrive, on their terms, so that they can enable their shareholders, employees, communities and partners to flourish.</div>
   </div>
 
+  <div class="ourvalues" style=" background-color: #ffc10717;">
+<div style="padding:10%; margin-left: 10%;">
+  <p style="color:#FD2D00; font-size:2.5em;"><b>What are our values?</b></p>
+  <p style="padding-top: 3%; font-size: 1.2em; font-style: italic;">Our organization thrives on a foundation of core principles that inspire and 
+    propel us forward. These guiding beliefs steer our actions and define our relationships with clients,
+     partners, and each other.</p>
 </div>
+<div class="ourvalues">
+  <div class="innervalues" style="margin:10% ">
+      <img src="{%static 'empathy.png'%}"/><p></p>
+      <p><b>EMPATHY</b></p>
+   
+      <p>We assist as if it was "us or ours"</p>
+  </div>
+  <div class="innervalues" style="margin:10% ">
+    <img src="{%static 'hardwork.png'%}"/><p></p>
+    <p><b>HARD WORK</b></p>   
+    <p>We work hard for you and with you.  Period.</p>
+        
+  </div>
+</div>
+  </div>
+<div class="ourvalues" style=" background-color: #ffc10717;">
+<div class="innervalues" style="margin:10% ">
+  <img src="{%static 'partnership.png'%}"/><p></p>
+      <p><b>PARTNERSHIP</b></p>   
+      <p>We devise fee structures that ensure alignment including equity or other benefits-sharing arrangements.</p>
+
+
+</div>
+<div style="padding:10%; margin-left: 2%;">
+  <p style="color:#FD2D00; font-size:2.5em;"><b>WE ARE MAKERS</b></p>
+  <p style="padding-top: 3%; font-size: 1.2em; font-style: italic;">
+    We believe in avoiding mundanity.</p>
+    <p style="font-size: 1.2em; font-style: italic;">
+   We pursue business as a creative and positive growth endeavor.
+  </p>
+</div>
+
+</div>
+
+<div>in progress</div>
+</div>
+
 
 <script>
   function animateValue(obj, start, end, duration) {
@@ -249,31 +345,60 @@
 
 
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const mainElement = document.querySelector('.scrolling-text');
+  document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll('.scrolling-left');
 
-        function checkVisibility() {
-          const rect = mainElement.getBoundingClientRect();
+
+    function checkVisibility() {
+        elements.forEach(function(element) {
+            const rect = element.getBoundingClientRect();
+            const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+
+            // Check if the bottom of the element is in the viewport
+            if (rect.bottom <= windowHeight && rect.bottom >= 0) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    function onScroll() {
+        checkVisibility();
+    }
+
+    window.addEventListener('scroll', onScroll);
+
+    // Initial check in case the element is already in view after a slight delay
+    setTimeout(checkVisibility, 100);
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const elements = document.querySelectorAll('.scrolling-right');
+
+  function checkVisibility() {
+      elements.forEach(function(element) {
+          const rect = element.getBoundingClientRect();
           const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
 
           // Check if the bottom of the element is in the viewport
           if (rect.bottom <= windowHeight && rect.bottom >= 0) {
-              mainElement.classList.add('visible');
-              window.removeEventListener('scroll', checkVisibility);
+              element.classList.add('visible');
           }
-      }
+      });
+  }
 
-      function onScroll() {
-          checkVisibility();
-      }
+  function onScroll() {
+      checkVisibility();
+  }
 
-      window.addEventListener('scroll', onScroll);
+  window.addEventListener('scroll', onScroll);
 
-      // Initial check in case the element is already in view after a slight delay
-      setTimeout(checkVisibility, 100);
-  });
+  // Initial check in case the element is already in view after a slight delay
+  setTimeout(checkVisibility, 100);
+});
 
-
-  
 </script>
 {% endblock  %}
