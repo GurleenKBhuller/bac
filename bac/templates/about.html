@@ -228,10 +228,22 @@
       grid-template-rows: 1fr 1fr;
   }
 }
+
+@media(max-width: 500px){
+  .main{
+    margin-top: 15% !important;
+  }
+}
+
+@media(max-width: 600px) and (min-width:500px){
+  .main{
+    margin-top: 10% !important;
+  }
+}
 </style>
 
 <div>  
-  <div class="main" style="background-color: #FD2D00;">
+  <div class="main" style="background-color: #FD2D00; margin-top: 5%;">
     <div class="serve">WE</div>
     <div class="serve">SERVE</div>
     <div class="serve" id="businesses"></div>

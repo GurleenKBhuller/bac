@@ -57,6 +57,13 @@ body {
 
 }
 
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030; /* Ensure the navbar is above other content */
+}
+
 /* about */
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
@@ -154,3 +161,7 @@ body {
   } 
 
 }
+
+
+
+
