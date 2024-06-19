@@ -4,7 +4,11 @@
 
 
  {% block content %}
+
  <style>
+  body{
+    overflow-x: hidden;
+  }
   .serve{
     padding: 1%;
     color: white !important;
@@ -66,19 +70,10 @@
   }
 }
 
+
 #businesses::before {
     content: "Agriculture";
     animation: textChange 5s steps(15, end) forwards;
-}
-
-
-
-.mv{
-  background-image: url({%static 'mission.png' %});
-  background-size:100% 100%; 
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .fade {
@@ -149,16 +144,6 @@
   transform: translateX(0);
 }
 
-.scrolling-right {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
-
-.scrolling-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
 
 
 .counts{
@@ -170,7 +155,7 @@
  
   padding:2%;
 }
-.value{
+.team, .industry, .projects{
   font-size: 6em;
 }
 .value2{
@@ -202,22 +187,65 @@
   cursor: pointer;
   justify-content: center;
 }
-{% comment %} 
-.empathy:focus {
-  box-shadow: #464648 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #464648 0 -3px 0 inset;
+.scrolling-right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
-.empathy:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #464648 0 -3px 0 inset;
-  transform: translateY(-2px);
+.scrolling-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.empathy:active {
-  box-shadow: #464648 0 3px 7px inset;
-  transform: translateY(2px);
-} {% endcomment %}
+.clients{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+}
+.clients-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding:2% 5% 2% 5%;
+  gap:5%;
+}
+
+.ian{
+  display: grid;
+  grid-template-columns: 0.75fr 1.5fr;
+}
+
+.team2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.team3{
+  padding-left: 2%;
+  display: grid;
+  grid-template-columns: 1.5fr 0.75fr 0.75fr 1.5fr;
+  column-gap: 5%;
+}
+
+.barb, .balkirt{
+  display: grid;
+  grid-template-columns: 0.75fr 1.5fr;
+}
 
 @media (max-width: 992px) {
+  .team2{
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+  }
+  .team3 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .ian{
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+  }
   .counts{
     grid-template-columns: none; 
       grid-template-rows: 1fr 1fr 1fr;
@@ -226,6 +254,16 @@
   .ourvalues{
     grid-template-columns: none; 
       grid-template-rows: 1fr 1fr;
+  }
+  .clients{
+    grid-template-rows: none;
+  }
+  .clients-info{
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10%;
+    padding:10%;
+    margin-bottom: 2%;
   }
 }
 
@@ -251,25 +289,25 @@
   
   <div class="counts">
     <div>
-    <div class="value">100</div>
+    <div class="team">5</div>
     <div class="value2">Highly skilled and spirited professionals</div>
     </div>
     <div>
-    <div class="value">100</div>
+    <div class="projects">120</div>
     <div class="value2">Projects Successfully Delivered Last Year</div>
     </div>
     <div>
-    <div class="value">100</div>
+    <div class="industry">5</div>
     <div class="value2">Key Industries</div>
     </div>
   </div>
   <div class="main scrolling-left" style="background-color: #121020;text-align: center;">
-    <div style="color:#FD2D00; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;">ABOUT US</div>
+    <div style="color:#FD2D00; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;" id="about">ABOUT US</div>
     <div style="color: white; font-size: 3em; padding: 4%; text-align: center;"><b>We provide wise guidance to clients and partners!</b></div>
     <div style="color:white; font-size: 1.5em; padding-left:2%; padding-right: 2%; padding-bottom:3%; font-style: italic;">We aspire to help clients thrive, on their terms, so that they can enable their shareholders, employees, communities and partners to flourish.</div>
   </div>
 
-  <div class="ourvalues" style=" background-color: #ffc10717;">
+  <div class="ourvalues" style=" background-color: #ece7e9;">
 <div style="padding:10%; margin-left: 10%;">
   <p style="color:#FD2D00; font-size:2.5em;"><b>What are our values?</b></p>
   <p style="padding-top: 3%; font-size: 1.2em; font-style: italic;">Our organization thrives on a foundation of core principles that inspire and 
@@ -291,7 +329,7 @@
   </div>
 </div>
   </div>
-<div class="ourvalues" style=" background-color: #ffc10717;">
+<div class="ourvalues" style=" background-color: #ece7e9;">
 <div class="innervalues" style="margin:10% ">
   <img src="{%static 'partnership.png'%}"/><p></p>
       <p><b>PARTNERSHIP</b></p>   
@@ -309,8 +347,200 @@
 </div>
 
 </div>
+<div>
+<div style="color:#FD2D00; font-size: 1.5em; font-weight: bold; padding-top: 2.5%; text-align: center;" id="team">MEET OUR TEAM</div>
+<div class="ian">
+  <div>
+    <img src="{%static 'ian.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
+  </div>
 
-<div>in progress</div>
+
+  <div style="color:#121020c7">
+    <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.65em;">
+      Robert Ian (Bob) Angell
+    </div>
+    <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.35em; font-style: italic;">
+      Founder and Chair
+    </div>
+    <div style="padding: 5% 8% 0% 5%; font-style: oblique;">
+      <p>Robert Ian (Bob) Angell realized that the world of financial and growth strategies was a hot 
+        mess while working for a big international corporation. Seeking to make it easier for companies 
+        worldwide to make sense of data, he set on a mission to change the world of strategic advisory and consulting</p>
+        <p>
+          Bob was initially just one man with a laptop and a desire to make people understand financial strategy better and make more informed choices in their investments. Quickly, what was meant to be a side project grew into a viable business with a handful of employees. At first, Bob's main focus was financial analysis, mergers and acquisitions, and investment advice, but slowly the team grew and could focus more on projects 
+          requiring intellectual property protection and defence and organic and inorganic growth for the companies.
+        </p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="team2">
+  <div class="barb">
+    <div>
+      <img src="{%static 'barb.jpg'%}" style="height: 85%; width: 100%; padding:5%"/>
+    </div>
+    <div style="color:#121020c7">
+      <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
+      Barb Angell
+      </div>
+      <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.05em; font-style: italic;">
+        CFO, Financial Expert
+      </div>
+      <div style="padding: 5% 8% 0% 5%; font-style: oblique;">
+        <p>Barb is an experienced investment and financial expert with a proven track record in guiding clients toward lucrative opportunities and sound fiscal decisions. Exceptional analytical 
+          skills and deep market knowledge ensure tailored strategies, maximizing returns and fostering long-term financial success.
+          </p>
+      </div>
+    </div>
+
+  </div>
+  <div class="balkirt">
+    <div>
+      <img src="{%static 'balkirat.jpg'%}" style="height: 85%; width: 100%; padding:5%"/>
+    </div>
+    <div style="color:#121020c7">
+      <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
+        Balkirat (Barry) Bhue
+      </div>
+      <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.05em; font-style: italic;">
+        Intellectual Property Expert and IP Lead
+      </div>
+      <div style="padding: 5% 8% 0% 5%; font-style: oblique;">
+        <p>Balkirat is our in-house technical expert with more than a decade's worth of IP consulting expertise. 
+          He collaborates with the R&D teams and 3rd-party partners to integrate patent strategy seamlessly into their 
+          technical offerings, ensuring a holistic solution for clients.
+        </p>
+      </div>
+    </div>
+  </div>
+</div
+</div>
+
+<div class="team3">
+  <div style="color:#121020c7; text-align: right;">
+    <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
+      Anjali Kukreja
+    </div>
+    <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.05em; font-style: italic;">
+      Systems and Process Specialist
+    </div>
+  </div>
+  <div>
+    <img src="{%static 'user.png'%}" style="height: 100%; width: 100%; padding:5%"/>
+  </div>
+  <div>
+    <img src="{%static 'user.png'%}" style="height: 100%; width: 100%; padding:5%"/>
+  </div>
+  <div style="color:#121020c7; text-align: left; margin-left: -8%;">
+    <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
+    Gurleen Kaur
+    </div>
+    <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.05em; font-style: italic;">
+      Software Engineer
+    </div>
+  </div>
+</div>
+
+  <div class="scrolling-right" style="background-color: #121020;text-align: center;" id="purpose">
+    {% comment %} <div style="color:#FD2D00; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;">OUR STORY</div> {% endcomment %}
+    <div style="color: white; font-size: 2em; padding: 4%; text-align: center;"><b>We exist to assist organizations, firms and individuals achieve outstanding performance - on terms they define!!!</b></div>
+    <div style="color:white; font-size: 1.5em; padding-left:2%; padding-right: 2%; padding-bottom:3%; font-style: italic;">BAC Insights, also known legally as Bob Angell Consulting Ltd., is the business, advisory and investment vehicle for Ian, Barb Angell and friends.  The firm was established to encapsulate years of knowledge and experience, to provide advice, and, where needed and helpful, to back up that advice with investment.</div>
+  </div>
+
+  <div class="" style="text-align: center; align-items: center; ">
+    <div style="color:#FD2D00; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;" id="clients">OUR CLIENTS</div>
+
+<div class="clients">
+  <div class="clients-info">
+    <div style="box-shadow: #968ba7 0px 3px 8px;">
+
+      <a href="https://www.hankypanky.com/" cursor="pointer" target="_blank" ><img src="{%static 'hankypanky.jpeg'%}" style="width: 60%; height: 85%; text-align: center;"/></a>
+    </div>
+    <div style="box-shadow: #00c8dc7a 0px 3px 8px; padding:8%">
+      <a href="https://www.blueforceenergy.ca/" cursor="pointer" target="_blank" >
+      <img src="{%static 'blueforce.png'%}" style="width: 60%; height: 70%; text-align: center;"/>
+      </a>
+    </div>
+    <div style="box-shadow: #00008B 0px 3px 8px;">
+      <a href="https://www.rubberstonepaving.ca/" cursor="pointer" target="_blank" >      
+      <img src="{%static 'rubberstone.png'%}" style="width: 45%; height: 55%; text-align: center;"/>
+      </a>
+    </div>
+  </div>
+  <div class="clients-info">
+    <div style="color:#6C8E67; margin-right: 2%; padding:2%; box-shadow: #6C8E67 0px 3px 8px;">
+      <span style="font-weight: bolder;">
+        <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Building Products<br>
+      </span>
+      <span style=" font-weight: bolder;">
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;BC, Canada</span><br>
+        <div style="text-align: left !important">
+          Aided a BC-based building products manufacturer and distributor in the assessment of strategic options including sale preparation, 
+          valuation, IM preparation , sale process management, and the selection of sale options.
+        </div>
+    </div>
+    <div style="color:#5E5E5E; margin-right: 2%; padding:4%; box-shadow: #5E5E5E 0px 3px 8px;">
+      <span style="font-weight: bolder;">
+        <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Law intellectual Property Firm<br>
+      </span>
+      <span style=" font-weight: bolder;">
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;USA</span><br>
+        <div style="text-align: left;">
+          Conducted technical and procedural support for intellectual property cases in the IT sector where 
+          specific and detailed knowledge of code, software and related technical details are critical.
+        </div>
+    </div>
+    <div style="color:#91B475; margin-right: 2%; padding:2%; box-shadow: #91B475 0px 3px 8px; margin-bottom: 2%;">
+      <span style="font-weight: bolder;">
+        <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Agricultural Services<br>
+      </span>
+      <span style=" font-weight: bolder;">
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;BC, Canada</span><br>
+        <div style="text-align: left;">
+          Guided a BC-headquartered agricultural services company with operations across Western Canada to complete a merger 
+          and define a forward strategy aimed at building a leading player in agricultural services and select equipment supply.
+        </div>
+    </div>
+   
+  </div>  
+  <div class="clients-info">
+
+    <div style="color:#F19C20; margin-right: 2%; padding:2%; box-shadow: #F19C20 0px 3px 8px;">
+      <span style="font-weight: bolder;">
+        <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Energy<br>
+      </span>
+      <span style=" font-weight: bolder;">
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;Malaysia</span><br>
+        <div style="text-align: left;">
+          Assisted a Malaysian based energy company explore options for financing Canadian operations.
+        </div>
+    </div>
+    <div style="color:#3F51B5; margin-right: 2%; padding:2%; box-shadow: #3F51B5 0px 3px 8px;">
+      <span style="font-weight: bolder;">
+        <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Global Leadership Organization<br>
+      </span>
+      <span style=" font-weight: bolder;">
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;Canada</span><br>
+        <div style="text-align: left;">
+          In support of a new management team, helped chart a new strategy for a global 
+          leadership Not-for-Profit including scope, structure, systems and leadership development.
+        </div>
+    </div>
+    <div style="color:#D32F2F; margin-right: 2%; padding:2%; box-shadow: #D32F2F 0px 3px 8px;">
+      <span style="font-weight: bolder;">
+        <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Apparel and Promotions<br>
+      </span>
+      <span style=" font-weight: bolder;">
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;BC, Canada</span><br>
+        <div style="text-align: left;">
+          Conducted a valuation and financing options analysis.
+        </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
 </div>
 
 
@@ -328,9 +558,21 @@
     window.requestAnimationFrame(step);
   }
   
-  const obj = document.getElementsByClassName("value");
+  const obj = document.getElementsByClassName("team");
   for(var i=0; i < obj.length; i++){
-    animateValue(obj[i], 0, 100, 5000);
+    animateValue(obj[i], 0, 5, 1000);
+  }
+
+  const obj2 = document.getElementsByClassName("projects");
+  for(var i=0; i < obj2.length; i++){
+    animateValue(obj2[i], 60, 120, 1500);
+  }
+  obj2.innerHTML = String(obj2.innerHTML) + "+";
+  console.log(obj2.value)
+
+  const obj3 = document.getElementsByClassName("industry");
+  for(var i=0; i < obj3.length; i++){
+    animateValue(obj3[i], 0, 100, 1000);
   }
 
   const observerOptions = {
