@@ -1,6 +1,79 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block content %}
+
+<style>
+    .whatwedo{
+        background-color: #121020;
+        color:white;
+        
+    }
+    .strategies{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3em;
+        row-gap: 3em;
+        padding: 0em 6em 0em 6em;
+    }
+    .strategy{
+        border: 3px solid white;
+    }
 
 
+    .hover-1{
+        display: none;
+    }
 
+    .initial-1:hover{
+            display: none;
+          
+    }
+    .initial-1:hover + .hover-1{
+        display: block;
+        padding:0 !important;
+        font-size: large;
+        text-align: center;
+
+    }
+</style>
+
+<div class="indexbody" style="margin-top: 5%;">
+    <div class="whatwedo">
+        <p></p>
+        <div style="font-size: 3em; padding:5% 1% 1% 5%; font-weight: bolder;">WHAT WE ARE GOOD AT</div>
+        <p style="padding: 1% 1% 1% 5%; font-size: 1.2em; font-style: italic;">We excel at providing tailored corporate finance/M&A, strategic planning, intellectual property, and growth advisory solutions, 
+            along with strategic investments, to empower businesses for lasting success.</p>
+
+        <div class="strategies">
+            <div class="strategy" id="strategy1" style="padding: 2%;">
+                <p style="font-size: 2.5em; text-align: center;padding: 6%; font-weight: bold;" class="initial-1">INVESTMENT ADVICE AND CO-INVESTMENT</p>
+                <p style="background-color: aqua; color:black" class = "hover-1"> It's not just about making investments; you need expert guidance and strategic co-investment
+                    partnerships to maximize your financial potential and achieve long-term success.</p>
+            </div>
+            <div class="strategy" >
+               
+            </div>
+            <div class="strategy">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, ad exercitationem, 
+                perferendis eveniet reprehenderit voluptate porro neque repellendus doloremque ratione optio, nemo non magnam. Voluptatem totam facilis aliquid. Esse, itaque!
+            </div>
+            <div class="strategy">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, ad exercitationem, 
+                perferendis eveniet reprehenderit voluptate porro neque repellendus doloremque ratione optio, nemo non magnam. Voluptatem totam facilis aliquid. Esse, itaque!
+            </div>
+            <div class="strategy">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, ad exercitationem, 
+                perferendis eveniet reprehenderit voluptate porro neque repellendus doloremque ratione optio, nemo non magnam. Voluptatem totam facilis aliquid. Esse, itaque!
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+       
+</script>
+
+{% endblock %}
