@@ -2,78 +2,105 @@
 {% load static %}
 
 {% block content %}
-
-<style>
-    .whatwedo{
-        background-color: #121020;
-        color:white;
-        
+  <style>
+    .whatwedo {
+      background-color: #121020;
+      color: white;
     }
-    .strategies{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 3em;
-        row-gap: 3em;
-        padding: 0em 6em 0em 6em;
+    .strategies {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      column-gap: 1.5em;
+      padding: 0em 3em 0em 3em;
     }
-    .strategy{
-        border: 3px solid white;
+    .strategy {
+      border: 3px solid white;
+      margin-bottom: 0 !important;
+      transition: box-shadow ease-in-out 0.6s, color ease-in-out 0.5s;
+      display: flex;
     }
-
-
-    .hover-1{
-        display: none;
+    
+    .strategy p {
+      margin-bottom: 0 !important;
+      align-items:center; 
+      justify-content:center; 
     }
-
-    .initial-1:hover{
-            display: none;
-          
+    
+    [class^='hover-'] {
+      display: none;
     }
-    .initial-1:hover + .hover-1{
-        display: block;
-        padding:0 !important;
-        font-size: large;
-        text-align: center;
-
+    
+    [id^='strategy']:hover .initial-1,
+    [id^='strategy']:hover .initial-2,
+    [id^='strategy']:hover .initial-3,
+    [id^='strategy']:hover .initial-4,
+    [id^='strategy']:hover .initial-5 {
+      display: none;
     }
-</style>
+    
+    [id^='strategy']:hover .hover-1,
+    [id^='strategy']:hover .hover-2,
+    [id^='strategy']:hover .hover-3,
+    [id^='strategy']:hover .hover-4,
+    [id^='strategy']:hover .hover-5,
+    [id^='strategy']:hover .hover-6 {
+      display: block;
+      box-shadow: inset 0 0 0 transparent, inset 0 0 0 transparent, inset 0 0 0 transparent, inset 0 0 0 transparent, 0 0 20px silver;
+      color: transparent;
+      font-size: medium;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    @media (max-width: 992px) {
+      .strategies {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        row-gap: 1.5em;
+      }
+      [class^='initial-'] {
+        padding: 8%;
+      }
+    }
+  </style>
 
-<div class="indexbody" style="margin-top: 5%;">
+  <div class="indexbody" style="margin-top: 5%;">
     <div class="whatwedo">
-        <p></p>
-        <div style="font-size: 3em; padding:5% 1% 1% 5%; font-weight: bolder;">WHAT WE ARE GOOD AT</div>
-        <p style="padding: 1% 1% 1% 5%; font-size: 1.2em; font-style: italic;">We excel at providing tailored corporate finance/M&A, strategic planning, intellectual property, and growth advisory solutions, 
-            along with strategic investments, to empower businesses for lasting success.</p>
+      <p></p>
+      <div style="font-size: 3em; padding:5% 1% 1% 5%; font-weight: bolder;">WHAT WE ARE GOOD AT</div>
+      <p style="padding: 1% 1% 1% 5%; font-size: 1.2em; font-style: italic;">We excel at providing tailored corporate finance/M&A, strategic planning, intellectual property, and growth advisory solutions, along with strategic investments, to empower businesses for lasting success.</p>
 
-        <div class="strategies">
-            <div class="strategy" id="strategy1" style="padding: 2%;">
-                <p style="font-size: 2.5em; text-align: center;padding: 6%; font-weight: bold;" class="initial-1">INVESTMENT ADVICE AND CO-INVESTMENT</p>
-                <p style="background-color: aqua; color:black" class = "hover-1"> It's not just about making investments; you need expert guidance and strategic co-investment
-                    partnerships to maximize your financial potential and achieve long-term success.</p>
-            </div>
-            <div class="strategy" >
-               
-            </div>
-            <div class="strategy">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, ad exercitationem, 
-                perferendis eveniet reprehenderit voluptate porro neque repellendus doloremque ratione optio, nemo non magnam. Voluptatem totam facilis aliquid. Esse, itaque!
-            </div>
-            <div class="strategy">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, ad exercitationem, 
-                perferendis eveniet reprehenderit voluptate porro neque repellendus doloremque ratione optio, nemo non magnam. Voluptatem totam facilis aliquid. Esse, itaque!
-            </div>
-            <div class="strategy">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, ad exercitationem, 
-                perferendis eveniet reprehenderit voluptate porro neque repellendus doloremque ratione optio, nemo non magnam. Voluptatem totam facilis aliquid. Esse, itaque!
-            </div>
+      <div class="strategies">
+        <div class="strategy" id="strategy1">
+          <p style="font-size: 1.5em; text-align: center;padding: 15% 8% 8% 8%; font-weight: bold;" class="initial-1">INVESTMENT ADVICE AND CO-INVESTMENT</p>
+          <p style="background-color: #7fcdd6; padding:4%; color:black; font-style: italic;" class="hover-1">It's not just about making investments; you need expert guidance and strategic co-investment partnerships to maximize your financial potential and achieve long-term success.</p>
         </div>
-    </div>
-
-</div>
-
-<script>
-
+        <div class="strategy" id="strategy2">
+            <p style="font-size: 1.5em; text-align: center;padding: 20% 8% 8% 8%; font-weight: bold;" class="initial-2">STRATEGY, SUPPORT, AND FACILITATION</p>
+          <p style="background-color: #ee9496; padding:15%; color:black; font-style: italic;" class="hover-2">It's not just about having a vision; you also need the right strategy and support to bring it to life successfully.</p>
+     
+        </div>
+        <div class="strategy" id="strategy3">
+            <p style="font-size: 1.25em; text-align: center;padding: 8%; font-weight: bold;" class="initial-3">CORPORATE FINANCE, FINANCING, AND MERGER AND ACQUISITION SUPPORT</p>
+            <p style="background-color: #e2d197; padding:4%; color:black; font-style: italic;" class="hover-3">From strategic financial guidance to bespoke M&A solutions, we provide diverse Corporate Finance, Financing, and 
+                Merger and Acquisition Support tailored to your unique business needs.</p>
        
-</script>
+        </div>
+        <div class="strategy" id="strategy4">
+            <p style="font-size: 1.5em; text-align: center;padding: 20% 8% 8% 8%; font-weight: bold;" class="initial-4">INTELLECTUAL PROPERTY AND STRATEGY</p>
+            <p style="background-color: #ee9496; padding:4%; color:black; font-style: italic;" class="hover-4">To safeguard your innovations, you need more than just ideas. We fortify your intellectual property with strategic protection and unwavering defence, ensuring your creations thrive and endure.</p>
+       
+        </div>
+        <div class="strategy" id="strategy5">
+            <p style="font-size: 1.5em; text-align: center;padding: 15% 8% 8% 8%;font-weight: bold;" class="initial-5">GROWTH STRATEGY - ORGANIC AND INORGANIC</p>
+            <p style="background-color: #7fcdd6; padding:15%; color:black; font-style: italic;" class="hover-5">Seamlessly Blending Organic and Inorganic Strategies for Sustainable Business Expansion.</p>
+       
+        </div>
+      </div> <br>In progress<br>
+    </div>
+  </div>
 
+  <script></script>
 {% endblock %}
