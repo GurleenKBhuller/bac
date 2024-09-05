@@ -255,7 +255,7 @@ a.button:active {
       font-size: 1.2em;
       box-shadow: rgba(111, 143, 175, 0.4) 0 2px 4px,rgba(111, 143, 175, 0.3) 0 7px 13px -3px,#6F8FAF 0 -3px 0 inset;
       box-sizing: border-box;
-      color: #9BC8F7;
+      color: #19599b;
       cursor: pointer;
       justify-content: center;
     }
@@ -532,7 +532,7 @@ a.button:active {
 
   <div class="indexbody" style="margin-top: 5%;">
             <!-- Show success message if it's available -->
-
+<section id="aboutussection">
     <div class="main" style="background-color: #4C8DCF;">
       {% if success_message %}
       <div class="alert alert-success" role="alert" style="padding:4% 0 0 5%;">
@@ -544,7 +544,7 @@ a.button:active {
     </div>
 
     <div class="scrolling-left" style="background-color: #7393B3;text-align: center;">
-      <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;" id="about">ABOUT US</div>
+      <div style="color:#19599b; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;" id="about">ABOUT US</div>
       <div style="color: white; font-size: 3em; padding: 4%; text-align: center;"><b>We provide wise guidance to clients and partners!</b></div>
       <div style="color:white; font-size: 1.5em; padding-left:2%; padding-right: 2%; padding-bottom:3%; font-style: italic;">We aspire to help clients thrive, on their terms, so that they can enable their shareholders, employees, communities and partners to flourish.</div>
     </div>
@@ -738,8 +738,10 @@ a.button:active {
        </div>
       </div>
     </div>
+  </section>
+  <section id="teamsection">
     <div style="background-color: #ece7e9;">
-    <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding-top: 2.5%; text-align: center;" id="team">MEET OUR TEAM</div>
+    <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding-top: 2.5%; text-align: center;" >MEET OUR TEAM</div>
 <div class="ian">
   <div>
     <img src="{%static 'ian.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
@@ -830,9 +832,12 @@ Director      </div>
     </div>
   </div>
 </div>
+</section>
+
    <p></p>
+  <section id="clientssection">
   <div class="" style="text-align: center; align-items: center; ">
-    <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;" id="clients">OUR CLIENTS</div>
+    <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;" >OUR CLIENTS</div>
 
   </div>
 
@@ -840,16 +845,16 @@ Director      </div>
   <div class="clients-info">
     <div style="box-shadow: #968ba7 0px 3px 8px;">
 
-      <a href="https://www.hankypanky.com/" cursor="pointer" target="_blank" ><img src="{%static 'hankypanky.jpeg'%}" style="width: 60%; height: 85%; text-align: center;"/></a>
+      <a href="https://www.hankypanky.com/" cursor="pointer" target="_blank" ><img src="{%static 'hankypanky.jpeg'%}" style="width: 60%; height: 85%; text-align: center; margin-left:15%"/></a>
     </div>
     <div style="box-shadow: #00c8dc7a 0px 3px 8px; padding:8%">
       <a href="https://www.blueforceenergy.ca/" cursor="pointer" target="_blank" >
-      <img src="{%static 'blueforce.png'%}" style="width: 60%; height: 70%; text-align: center;"/>
+      <img src="{%static 'blueforce.png'%}" style="width: 60%; height: 70%; text-align: center; margin-left:15%"/>
       </a>
     </div>
     <div style="box-shadow: #00008B 0px 3px 8px;">
       <a href="https://www.rubberstonepaving.ca/" cursor="pointer" target="_blank" >      
-      <img src="{%static 'rubberstone.png'%}" style="width: 45%; height: 55%; text-align: center;"/>
+      <img src="{%static 'rubberstone.png'%}" style="width: 45%; height: 55%; text-align: center; margin-left:25%"/>
       </a>
     </div>
   </div>
@@ -859,7 +864,7 @@ Director      </div>
         <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Building Products<br>
       </span>
       <span style=" font-weight: bolder;">
-        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;BC, Canada</span><br>
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%;"/>&nbsp;BC, Canada</span><br>
         <div style="text-align: left !important">
           Aided a BC-based building products manufacturer and distributor in the assessment of strategic options including sale preparation, 
           valuation, IM preparation , sale process management, and the selection of sale options.
@@ -870,7 +875,7 @@ Director      </div>
         <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Law intellectual Property Firm<br>
       </span>
       <span style=" font-weight: bolder;">
-        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;USA</span><br>
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%;"/>&nbsp;USA</span><br>
         <div style="text-align: left;">
           Conducted technical and procedural support for intellectual property cases in the IT sector where 
           specific and detailed knowledge of code, software and related technical details are critical.
@@ -881,7 +886,7 @@ Director      </div>
         <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Agricultural Services<br>
       </span>
       <span style=" font-weight: bolder;">
-        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;BC, Canada</span><br>
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%;"/>&nbsp;BC, Canada</span><br>
         <div style="text-align: left;">
           Guided a BC-headquartered agricultural services company with operations across Western Canada to complete a merger 
           and define a forward strategy aimed at building a leading player in agricultural services and select equipment supply.
@@ -896,7 +901,7 @@ Director      </div>
         <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Energy<br>
       </span>
       <span style=" font-weight: bolder;">
-        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;Malaysia</span><br>
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%;"/>&nbsp;Malaysia</span><br>
         <div style="text-align: left;">
           Assisted a Malaysian based energy company explore options for financing Canadian operations.
         </div>
@@ -906,7 +911,7 @@ Director      </div>
         <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Global Leadership Organization<br>
       </span>
       <span style=" font-weight: bolder;">
-        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;Canada</span><br>
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; "/>&nbsp;Canada</span><br>
         <div style="text-align: left;">
           In support of a new management team, helped chart a new strategy for a global 
           leadership Not-for-Profit including scope, structure, systems and leadership development.
@@ -917,16 +922,17 @@ Director      </div>
         <img src="{%static 'industry.png'%}" style="height: 15%; width: 6%; margin-top: -2%;"/>&nbsp;&nbsp;Apparel and Promotions<br>
       </span>
       <span style=" font-weight: bolder;">
-        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%; margin-left: -8%;"/>&nbsp;BC, Canada</span><br>
+        <img src="{%static 'location.png'%}" style="height: 10%; width: 6%;"/>&nbsp;BC, Canada</span><br>
         <div style="text-align: left;">
           Conducted a valuation and financing options analysis.
         </div>
     </div>
   </div>
 </div>
-
+  </section>
+  <section id="careersssection">
 <div class="" style="text-align: center; align-items: center; background-color: #ece7e9; padding-bottom: 2%;">
-  <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;" id="clients">WORK WITH US</div>
+  <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding: 2.5%;" id="careersssection">WORK WITH US</div>
 
   <div class="containercareer">
     <ul class="responsive-table">
@@ -964,10 +970,11 @@ Director      </div>
   </div>
 
 </div>
+  </section>
 
 
-<section id="contact" style="padding:5%">
-  <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; text-align: center;">CONTACT US</div>
+<section id="contactsection" style="padding:5%">
+  <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; text-align: center;">GET IN TOUCH</div>
        <div class="contact">
         <div>
         <form method="post">

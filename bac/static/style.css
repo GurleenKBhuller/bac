@@ -24,9 +24,9 @@ body {
 }
 
 .nav-item a:hover, a:focus, a:active {
+  color:#4C8DCF!important;
+  background-color: white;
   
-  text-decoration: none;
-  background-color: inherit;
 
   /* font-size: x-large; */
 }

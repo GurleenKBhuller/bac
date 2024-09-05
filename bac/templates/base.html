@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="{% static "style.css" %}" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&amp;display=swap" rel="stylesheet" />
@@ -97,84 +99,24 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="justify-content: center; width: 100%; margin-right:5%">
             <li class="nav-item">
-              <a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page" href="{% url 'index' %}">Home</a>
+              <a class="nav-link" href="#aboutussection" id="aboutussection-link">About us</a>
             </li>
-            <li class="nav-item dropdown" style="color: white;">
-              <a class="nav-link" role="button" href="#bott" aria-expanded="false">Industries</a>
-
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Capabilities</a>
-              <ul class="dropdown-menu capabilities-dropdown dropdown-menu-sm-start" style="left: -240% !important;">
-                <li>
-                  <a class="dropdown-item" href="#">Business Planning and Budgeting</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Cost Management</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Customer Experience</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Digital and Social</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Growth, Marketing &amp; Sales</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Innovation</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">International Business</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Mergers and Acquisitions</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Operations</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">People &amp; Organizational Performance</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Pricing and Revenue Management</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Risk and Resilience</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Sustainability</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Strategy and Corporate Finance</a>
-                </li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#teamsection" id="teamsection-link">Our Team</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Insights</a>
+              <a class="nav-link" href="#clientssection" id="clientssection-link">Clients</a>
             </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle {% if request.path == '/about/' %}active{% endif %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">About us</a>
-              <ul class="dropdown-menu about-dropdown dropdown-menu-sm-start">
-                <li>
-                  <a class="dropdown-item" href="{% url 'about' %}">Who we are</a>
-                  <ul style="list-style-type: none;">
-                    <a class="dropdown-second-item" href="#about"><li class="dropdown-second-item">Our Mission, Vision, and Values</li></a>
-                    <a class="dropdown-second-item" href="#team"><li class="dropdown-second-item">Our People and Leadership</li></a>
-                    <a class="dropdown-second-item" href="#purpose"><li class="dropdown-second-item">Our Purpose</li></a>
-                  </ul>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#clients">Our Clients</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#footer">Contact us</a>
-                </li>        
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#careersssection" id="careersssection-link">Careers</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contactsection" id="contactsection-link">Contact Us</a>
+            </li>
+            
           </ul>
         </div>
       </div>
@@ -214,5 +156,57 @@
       </div>
     </div>
 
+      <script>
+        $.fn.isInViewport = function() {
+          var elementTop = $(this).offset().top;
+          var elementBottom = elementTop + $(this).outerHeight();
+      
+          var viewportTop = $(window).scrollTop();
+          var viewportBottom = viewportTop + $(window).height();
+      
+          return elementBottom > viewportTop && elementTop < viewportBottom;
+      };
+
+      $(window).on('resize scroll', function() {
+        if ($('#aboutussection').isInViewport()) {
+          $('#teamsection-link').removeClass("active");
+          $('#careersssection-link').removeClass("active");
+          $('#clientssection-link').removeClass("active");
+          $('#contactsection-link').removeClass("active");
+
+            $('#aboutussection-link').addClass("active");
+        } else if($('#teamsection').isInViewport()){
+          $('#careersssection-link').removeClass("active");
+          $('#clientssection-link').removeClass("active");
+          $('#contactsection-link').removeClass("active");
+          $('#aboutussection-link').removeClass("active");
+
+          $('#teamsection-link').addClass("active");
+        }else if($('#careersssection').isInViewport()){
+          $('#clientssection-link').removeClass("active");
+          $('#contactsection-link').removeClass("active");
+          $('#aboutussection-link').removeClass("active");
+          $('#teamsection-link').removeClass("active");
+
+          $('#careersssection-link').addClass("active");
+        }else if($('#clientssection').isInViewport()){
+          $('#contactsection-link').removeClass("active");
+          $('#aboutussection-link').removeClass("active");
+          $('#teamsection-link').removeClass("active");
+          $('#careersssection-link').removeClass("active");
+
+          $('#clientssection-link').addClass("active");
+        }else if($('#contactsection').isInViewport()){
+          $('#aboutussection-link').removeClass("active");
+          $('#teamsection-link').removeClass("active");
+          $('#careersssection-link').removeClass("active");
+          $('#clientssection-link').removeClass("active");
+
+          $('#contactsection-link').addClass("active");
+        }
+    });
+      </script>
+      
+      
   </body>
 </html>
