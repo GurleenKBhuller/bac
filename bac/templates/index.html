@@ -535,7 +535,7 @@ a.button:active {
 <section id="aboutussection">
     <div class="main" style="background-color: #4C8DCF;">
       {% if success_message %}
-      <div class="alert alert-success" role="alert" style="padding:4% 0 0 5%;">
+      <div class="alert alert-success" role="alert" style="padding:1.5% 0 1.5% 5%;border-radius: 0;">
       {{ success_message }}</div>
   {% endif %}
       <div class="serve">WE</div>
@@ -930,7 +930,7 @@ Director      </div>
   </div>
 </div>
   </section>
-  <section id="careersssection">
+  <section id="careerssection">
 <div class="" style="text-align: center; align-items: center; background-color: #ece7e9; padding-bottom: 2%;">
   <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding: 2.5%;" id="careersssection">WORK WITH US</div>
 
@@ -991,8 +991,8 @@ Director      </div>
           {% endif %}
           </div>
             <div class="input-data" style="padding:1%;">
-                {{ form.subject.label_tag }}
-                {{ form.subject }}
+                {{ form.subject.label_tag }}{% if form.subject.field.required %} 
+                {{ form.subject }} <span class="required-asterisk">*</span>{% endif %}
             </div>
         <div class="form-row">
             <div class="input-data textarea">

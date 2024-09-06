@@ -19,7 +19,7 @@ body {
 .nav-item a {
   font-family: Baskerville !important;
   font-size: medium !important;
-  color: white !important;
+  color: white;
 
 }
 
@@ -29,6 +29,11 @@ body {
   
 
   /* font-size: x-large; */
+}
+
+.active{
+  color:#4C8DCF!important;
+  background-color: white;
 }
 
 .industries-dropdown, .capabilities-dropdown{

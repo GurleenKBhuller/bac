@@ -22,8 +22,9 @@ def index(request):
             message = form.cleaned_data['message']
             
             # Compose email
-            subject = 'Contact Form Submission'
-            email_message = f"Message from: {name}\n\n{message}"
+            contactsubject =  form.cleaned_data['subject']
+            subject = f'Contact Form: {contactsubject}'
+            email_message = f"Message from: {name} with email {email}\n\n{message}"
             from_email = email
             recipient_list = ['gurleenkaurbhuller@gmail.com']  # Replace with your recipient email
             
