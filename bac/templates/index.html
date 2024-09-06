@@ -200,6 +200,9 @@ a.button:active {
     }
     
     @media (max-width: 992px) {
+      .contact{
+        padding-left: 25%;
+      }
       .info{
         display:none;
       }
@@ -219,10 +222,6 @@ a.button:active {
         grid-template-columns: none; 
           grid-template-rows: 1fr 1fr 1fr;
           
-      }
-      .ourvalues{
-        grid-template-columns: none; 
-          grid-template-rows: 1fr 1fr;
       }
       .clients{
         grid-template-rows: none;
@@ -471,15 +470,27 @@ a.button:active {
       box-shadow: none;
       transform: translateY(0);
     }
-    @media(max-width: 500px){
+
+    @media(max-width: 1025px){
       .main{
         margin-top: 15% !important;
+      }
+    }
+    @media(max-width: 500px){
+      .main{
+        margin-top: 24% !important;
+      }
+    }
+    @media (max-width: 400px) {
+      .ourvalues {
+          grid-template-columns: none;
+          grid-template-rows: 1fr 1fr;
       }
     }
     
     @media(max-width: 600px) and (min-width:500px){
       .main{
-        margin-top: 10% !important;
+        margin-top: 25% !important;
       }
     }
     
