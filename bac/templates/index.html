@@ -205,14 +205,10 @@ a.button:active {
       display: grid;
       grid-template-columns: 0.75fr 1.5fr;
     }
+
+
     
     @media (max-width: 992px) {
-      .contact{
-        grid-template-columns:none;
-      }
-      .formcontact{
-        margin-left:25%;
-      }
       .info{
         display: none;
       }
@@ -500,6 +496,12 @@ a.button:active {
       }
     } {% endcomment %}
     @media(max-width: 900px){
+      .contact{
+        grid-template-columns:none;
+      }
+      .formcontact{
+        margin-left:25%;
+      }
       .main{
         margin-top: 13% !important;
         padding-top: 6% !important;
