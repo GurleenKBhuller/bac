@@ -208,10 +208,19 @@ a.button:active {
     
     @media (max-width: 992px) {
       .top2{
-        margin-top:20% !important;
+        margin-top:25% !important;
       }
+      .top4{
+          margin-top:20% !important;
+      }
+      .top1{
+        margin-top:10% !important;
+      };
       .contact{
-        padding-left: 25%;
+        grid-template-columns:none;
+      }
+      .formcontact{
+        margin-left:35%;
       }
       .info{
         display:none;
@@ -488,7 +497,7 @@ a.button:active {
     } {% endcomment %}
     @media(max-width: 900px){
       .main{
-        margin-top: 11% !important;
+        margin-top: 13% !important;
         padding-top: 6% !important;
 
       }
@@ -531,7 +540,7 @@ a.button:active {
       }
 
       .ctop{
-        margin-top: 10% !important;
+        margin-top: 10%;
         margin-left: 0 !important;
       }
 
@@ -553,6 +562,7 @@ a.button:active {
       padding-top: 10px;
       width: 80%; /* Ensure textarea takes full width of its container */
   }
+
   </style>
 
   <div class="indexbody" style="margin-top: 5%;">
@@ -660,13 +670,13 @@ a.button:active {
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="carousel-text">
-                  <div>
-                    <h1 style="font-variant-numeric: tabular-nums; font-size: 10em; font-weight: 900; color:#047eff">
+                  <div style="margin-top:3% !important">
+                    <h1 style="margin-top:3% !important; font-variant-numeric: tabular-nums; font-size: 10em; font-weight: 900; color:#047eff">
                         1
                     </h1>
                     <h3 style="z-index: 1; margin-top: -28%; margin-left: 18%; font-weight: bold; font-size: 2em; line-height: 95%;">COMPREHENSIVE ANALYSIS</h3>
                     </div>
-                  <div class="ctop" style="margin-top: 45%; margin-left: -15%; font-size: 1.25em;">
+                  <div class="ctop top1" style="margin-top: 45%; margin-left: -15%; font-size: 1.25em;">
                     <ul style="font-style: italic;list-style-type: '\2192   ';">
                         <li>Conduct an in-depth analysis of the client's current 
                             financial status, market positioning, and growth goals.</li>
@@ -679,7 +689,7 @@ a.button:active {
               <div class="carousel-item">
                 <div class="carousel-text">
                     <div>
-                        <h1 style="font-variant-numeric: tabular-nums; margin-top:-2%; font-size: 12em; font-weight: 900; color:#047eff">
+                        <h1 style="font-variant-numeric: tabular-nums; margin-top:-2% !important; font-size: 12em; font-weight: 900; color:#047eff">
                             2
                         </h1>
                         <h3 style="z-index: 1;text-shadow: white; margin-top: -50%; margin-left: 25%; font-weight: bold; font-size: 2em; line-height: 95%;">STRATEGIC PLANNING</h3>
@@ -719,7 +729,7 @@ a.button:active {
                         </h1>
                         <h3 style="z-index: 1; margin-top: -50%; margin-left: 25%; font-weight: bold; font-size: 2em; line-height: 95%;">CONTINUOUS OPTIMIZATION AND DEFENSE</h3>
                         </div>
-                      <div class="ctop" style="margin-top: 45%; margin-left: -12%; font-size: 1.25em;">
+                      <div class="ctop top4" style="margin-top: 45%; margin-left: -12%; font-size: 1.25em;">
                         <ul style="font-style: italic;list-style-type: '\2192   ';">
                             <li>Implement proactive measures to safeguard intellectual property, and monitor the market and regulatory changes to adjust strategies accordingly to mitigate risks.</li>
                                 <li> Offer ongoing support for optimizing investment portfolios, refining growth strategies, and adapting to changing market dynamics. </li>
@@ -994,7 +1004,7 @@ Director      </div>
 <section id="contactsection" style="padding:5%">
   <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; text-align: center;">GET IN TOUCH</div>
        <div class="contact">
-        <div>
+        <div class="formcontact">
         <form method="post">
           {% csrf_token %}
             <div class="input-data" style="padding:1%;">
