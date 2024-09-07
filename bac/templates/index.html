@@ -29,7 +29,6 @@
       font-weight: 400;
       letter-spacing: -.022em;
       line-height: 1.47059;
-      min-width: 30px;
       overflow: visible;
       padding: 4px 15px;
       text-align: center;
@@ -66,6 +65,10 @@
       padding-left: 10px;
       padding-right: 10px;
     }
+
+    .teamnames a:hover, a:focus, a:active {
+      background-color: #ece7e9 !important;
+    }
         
     .responsive-table {
       li {
@@ -88,15 +91,19 @@
       }
       .col-1 {
         flex-basis: 10%;
+        width: auto !important;
       }
       .col-2 {
         flex-basis: 40%;
+        width: auto !important;
       }
       .col-3 {
         flex-basis: 25%;
+        width: auto !important;
       }
       .col-4 {
         flex-basis: 25%;
+        width: auto !important;
       }
       
       @media all and (max-width: 992px) {
@@ -251,7 +258,7 @@ a.button:active {
       padding:5%;
       padding-top:10% !important;
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1em;
       box-shadow: rgba(111, 143, 175, 0.4) 0 2px 4px,rgba(111, 143, 175, 0.3) 0 7px 13px -3px,#6F8FAF 0 -3px 0 inset;
       box-sizing: border-box;
       color: #19599b;
@@ -471,28 +478,32 @@ a.button:active {
       transform: translateY(0);
     }
 
-    @media(max-width: 1025px){
+    {% comment %} @media(max-width: 1025px){
       .main{
         margin-top: 15% !important;
       }
-    }
-    @media(max-width: 500px){
+    } {% endcomment %}
+    @media(max-width: 900px){
       .main{
-        margin-top: 24% !important;
+        margin-top: 11% !important;
+        padding-top: 3% !important;
+
+      }
+      .barbpic, .balkiratpic{
+            margin-top: 35%;
+    height: 60vw !important;
       }
     }
-    @media (max-width: 400px) {
+    @media (max-width: 900px) {
       .ourvalues {
           grid-template-columns: none;
           grid-template-rows: 1fr 1fr;
       }
-    }
-    
-    @media(max-width: 600px) and (min-width:500px){
-      .main{
-        margin-top: 25% !important;
+      .valuesdesc{
+        font-size: 1.35em !important;
       }
     }
+    
     
     @media (max-width: 992px) {
       
@@ -567,7 +578,7 @@ a.button:active {
     <div class="ourvalues" style="background-color: #ece7e9;">
       <div style="padding:10%; margin-left: 10%;">
         <p style="color:#4C8DCF; font-size:2.5em;"><b>What are our values?</b></p>
-        <p style="padding-top: 3%; font-size: 1.2em; font-style: italic;">Our organization thrives on a foundation of core principles that inspire and 
+        <p class="valuesdesc" style="padding-top: 3%; font-size: 1.2em; font-style: italic;">Our organization thrives on a foundation of core principles that inspire and 
           propel us forward. These guiding beliefs steer our actions and define our relationships with clients,
            partners, and each other.</p>
       </div>
@@ -650,9 +661,9 @@ a.button:active {
                     <h1 style="font-variant-numeric: tabular-nums; font-size: 10em; font-weight: 900; color:#047eff">
                         1
                     </h1>
-                    <h3 style="z-index: 1; margin-top: -28%; margin-left: 13%; font-weight: bold; font-size: 2em; line-height: 95%;">COMPREHENSIVE ANALYSIS</h3>
+                    <h3 style="z-index: 1; margin-top: -28%; margin-left: 18%; font-weight: bold; font-size: 2em; line-height: 95%;">COMPREHENSIVE ANALYSIS</h3>
                     </div>
-                  <div class="ctop" style="margin-top: 35%; margin-left: -15%; font-size: 1.25em;">
+                  <div class="ctop" style="margin-top: 45%; margin-left: -15%; font-size: 1.25em;">
                     <ul style="font-style: italic;list-style-type: '\2192   ';">
                         <li>Conduct an in-depth analysis of the client's current 
                             financial status, market positioning, and growth goals.</li>
@@ -670,7 +681,7 @@ a.button:active {
                         </h1>
                         <h3 style="z-index: 1; margin-top: -50%; margin-left: 25%; font-weight: bold; font-size: 2em; line-height: 95%;">STRATEGIC PLANNING</h3>
                         </div>
-                      <div class="ctop" style="margin-top: 40%; margin-left: -6%; font-size: 1.25em;">
+                      <div class="ctop" style="margin-top: 25% !important; margin-left: -6%; font-size: 1.25em;">
                         <ul style="font-style: italic;list-style-type: '\2192   ';">
                             <li>Provide hands-on support and facilitation, ensuring seamless execution of strategic initiatives.</li>
                                 <li> Create detailed roadmaps for corporate finance, financing, mergers, 
@@ -689,7 +700,7 @@ a.button:active {
                         </h1>
                         <h3 style="z-index: 1; margin-top: -45%; margin-left: 25%; font-weight: bold; font-size: 2em; line-height: 95%;">SPECIALIZED EXPERTISE</h3>
                         </div>
-                      <div class="ctop" style="margin-top: 40%; margin-left: -6%; font-size: 1.25em;">
+                      <div class="ctop" style="margin-top: 20% !important; margin-left: -6%; font-size: 1.25em;">
                         <ul style="font-style: italic;list-style-type: '\2192   ';">
                             <li>Offer specialized expertise in corporate finance, financing, mergers, acquisitions, and intellectual property strategies.</li>
                                 <li> Develop innovative financial models and structures to optimize capital allocation and enhance shareholder value.</li>
@@ -732,34 +743,15 @@ a.button:active {
   <div style="color: white; font-size: 2em; padding: 4%; text-align: center;"><b>We exist to assist organizations, firms and individuals achieve outstanding performance - on terms they define!!!</b></div>
   <div style="color:white; font-size: 1.5em; padding-left:2%; padding-right: 2%; padding-bottom:3%; font-style: italic;">BAC Insights, also known legally as Bob Angell Consulting Ltd., is the business, advisory and investment vehicle for Ian, Barb Angell and friends.  The firm was established to encapsulate years of knowledge and experience, to provide advice, and, where needed and helpful, to back up that advice with investment.</div>
 </div>
-
-    <div class="container" style="margin-right: 0; padding-right: 0;">
-        <div> 
-        <p style="font-size: 5em; padding:15% 1% 1% 0%; font-weight: bolder; line-height: 90%; color:#429eff">HOW WILL YOU BENEFIT?</p>
-          {% comment %} <p>Understanding the overarching trends of your business and overall market saves you time, money and energy in the long run, and can help you dominate your market.</p>
-           {% endcomment %}
-        </div>
-
-      <div class="column-right" style="background-color: #9BC8F7; padding-right: 0; margin-right: 0; grid-template-rows: 1fr 1fr;">
-       <div class="right-row firstrow">
-        <div class="rightrowelements">&#10003; CLIENT INSIGHTS</div>
-        <div class="rightrowelements">&#10003; INCREASED EFFICIENCY</div>
-        <div class="rightrowelements">&#10003; IMPACTFUL INSIGHTS</div>
-       </div>
-       <div class="right-row">
-        <div class="rightrowelements">&#10003; DATA-DRIVEN INNOVATION</div>
-        <div class="rightrowelements">&#10003; STRATEGIC SYNERGY</div>
-        <div class="rightrowelements">&#10003; MARKET INSIGHTS</div>
-       </div>
-      </div>
-    </div>
   </section>
   <section id="teamsection">
     <div style="background-color: #ece7e9;">
     <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding-top: 2.5%; text-align: center;" >MEET OUR TEAM</div>
 <div class="ian">
   <div>
-    <img src="{%static 'ian.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
+    <a class="teamnames" href="https://www.linkedin.com/in/ianangell/" target="_blank">
+      <img src="{%static 'ian.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
+    </a>
   </div>
 
 
@@ -785,7 +777,9 @@ a.button:active {
 <div class="team2" style="background-color: #ece7e9;">
   <div class="barb">
     <div>
-      <img src="{%static 'barb.jpg'%}" style="height: 85%; width: 100%; padding:5%"/>
+      <a class="teamnames" href="https://www.linkedin.com/in/barbara-angell-21a584312/" target="_blank">
+        <img src="{%static 'barb.jpg'%}" class="barbpic" style="height: 85%; width: 100%; padding:5%"/>
+      </a>
     </div>
     <div style="color:#121020c7">
       <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
@@ -803,7 +797,9 @@ Director      </div>
   </div>
   <div class="balkirt">
     <div>
-      <img src="{%static 'balkirat.jpg'%}" style="height: 85%; width: 100%; padding:5%"/>
+      <a class="teamnames" href="https://www.linkedin.com/in/imbalkirat/" target="_blank">
+        <img src="{%static 'balkirat.jpg'%}" style="height: 85%; width: 100%; padding:5%" class="balkiratpic"/>
+      </a>
     </div>
     <div style="color:#121020c7">
       <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
@@ -833,10 +829,14 @@ Director      </div>
     </div>
   </div>
   <div>
-    <img src="{%static 'gurleen.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
+    <a class="teamnames" href="https://www.linkedin.com/in/gurleen-kaur-bhuller/" target="_blank">
+      <img src="{%static 'gurleen.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
+    </a>
   </div>
   <div>
-    <img src="{%static 'anjali.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
+    <a class="teamnames" href="https://www.linkedin.com/in/anjali-k-ba378a130/" target="_blank">
+      <img src="{%static 'anjali.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
+    </a>
   </div>
   <div style="color:#121020c7; text-align: left; margin-left: -8%;">
     <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
