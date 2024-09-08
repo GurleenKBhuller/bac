@@ -79,7 +79,7 @@
         margin-bottom: 25px;
       }
       .table-header {
-        background-color: #9BC8F7;
+        background-color: #005dba;
         color:white;
         font-size: 14px;
         text-transform: uppercase;
@@ -233,6 +233,25 @@ a.button:active {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
       }
+      .team3 > :nth-child(1) {
+        order: 1; /* Move first element to second position */
+    }
+
+    .team3 > :nth-child(2) {
+        order: 2; /* Keep second element in first position */
+    }
+
+    .team3 > :nth-child(3) {
+        order: 4; /* Keep third element in its original position */
+    }
+
+    .team3 > :nth-child(4) {
+        order: 3; /* Keep fourth element in its original position */
+    }
+
+    .anjali{
+      text-align: right !important;
+    }
       .ian{
         grid-template-columns: none;
         grid-template-rows: 1fr 1fr;
@@ -254,6 +273,7 @@ a.button:active {
       }
     }
     .ourvalues{
+      margin-bottom:-3%;
       display:grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
@@ -264,7 +284,7 @@ a.button:active {
       margin:2%;
       border: 1px;
       align-items: center;
-      background-color: #7393B3;
+      background-color: #005dba;
       border-radius: 4px;
       border-width: 0;
       padding:5%;
@@ -356,7 +376,7 @@ a.button:active {
   }
   
     .whatwedo {
-      background-color: #7393B3;
+      background-color: #005dba;
       color: white;
     }
     .strategies {
@@ -517,6 +537,9 @@ a.button:active {
           grid-template-columns: none;
           grid-template-rows: 1fr 1fr;
       }
+      .empathy{
+        margin-top:-15% !important;
+      }
       .valuesdesc{
         font-size: 1.35em !important;
       }
@@ -588,8 +611,8 @@ a.button:active {
       <div class="serve" id="businesses"></div>
     </div>
 
-    <div style="background-color: #7393B3;text-align: center;">
-      <div style="color:#19599b; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;" id="about">ABOUT US</div>
+    <div style="background-color: #005dba;text-align: center;">
+      <div style="color:#19599b; font-size: 1.5em; font-weight: bold; padding-top: 2.5%; text-shadow: 1px 1px 2px white, 0 0 1em white, 0 0 0.2em white;" id="about">ABOUT US</div>
       <div style="color: white; font-size: 3em; padding: 4%; text-align: center;"><b>We provide wise guidance to clients and partners!</b></div>
       <div style="color:white; font-size: 1.5em; padding-left:2%; padding-right: 2%; padding-bottom:3%; font-style: italic;">We aspire to help clients thrive, on their terms, so that they can enable their shareholders, employees, communities and partners to flourish.</div>
     </div>
@@ -602,7 +625,7 @@ a.button:active {
            partners, and each other.</p>
       </div>
       <div class="ourvalues">
-        <div class="innervalues" style="margin:10% ">
+        <div class="innervalues empathy" style="margin:10% ">
             <img src="{%static 'empathy.png'%}"/><p></p>
             <p><b>EMPATHY</b></p>
          
@@ -757,7 +780,7 @@ a.button:active {
   
   </div>
 </div>
-<div style="background-color: #7393B3;text-align: center;" id="purpose">
+<div style="background-color: #005dba;text-align: center;" id="purpose">
   {% comment %} <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;">OUR STORY</div> {% endcomment %}
   <div style="color: white; font-size: 2em; padding: 4%; text-align: center;"><b>We exist to assist organizations, firms and individuals achieve outstanding performance - on terms they define!!!</b></div>
   <div style="color:white; font-size: 1.5em; padding-left:2%; padding-right: 2%; padding-bottom:3%; font-style: italic;">BAC Insights, also known legally as Bob Angell Consulting Ltd., is the business, advisory and investment vehicle for Ian, Barb Angell and friends.  The firm was established to encapsulate years of knowledge and experience, to provide advice, and, where needed and helpful, to back up that advice with investment.</div>
@@ -857,7 +880,7 @@ Director      </div>
       <img src="{%static 'anjali.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
     </a>
   </div>
-  <div style="color:#121020c7; text-align: left; margin-left: -8%;">
+  <div style="color:#121020c7; text-align: left; margin-left: -8%;" class="anjali">
     <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
       <a class="teamnames" href="https://www.linkedin.com/in/anjali-k-ba378a130/" target="_blank">Anjali Kukreja</a>
     </div>
