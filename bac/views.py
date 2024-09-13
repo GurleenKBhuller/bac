@@ -24,9 +24,9 @@ def index(request):
             # Compose email
             contactsubject =  form.cleaned_data['subject']
             subject = f'Contact Form: {contactsubject}'
-            email_message = f"Message from: {name} with email {email}\n\n{message}"
+            email_message = f"Message from: {name}, email address: {email}\n\n{message}"
             from_email = email
-            recipient_list = ['gurleenkaurbhuller@gmail.com']  # Replace with your recipient email
+            recipient_list = ['bobangellconsulting@gmail.com']  # Replace with your recipient email
             
             # Send email
             send_mail(subject, email_message, from_email, recipient_list)

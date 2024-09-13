@@ -88,6 +88,17 @@
           padding-left: 2%;
         }
       }
+
+      .progress {
+        z-index: 3;
+        height: 1%;
+        width: 0;
+        background: black;
+        position: fixed;
+        top: 0;  
+        left: 0;
+        right: 0;
+     }
     </style>
   </head>
   <body>
@@ -126,6 +137,8 @@
         </div>
       </div>
     </nav>
+  
+
 
     {% block content %}
     {% endblock %}
@@ -162,6 +175,15 @@
     </div>
 
       <script>
+
+        window.addEventListener('scroll', function() {
+          let totalHeight = document.body.scrollHeight -      window.innerHeight;
+          let windowOffsetHeight = window.pageYOffset;
+          let progress = document.querySelector('.progress');
+          let percentage = (windowOffsetHeight * 100 / totalHeight)
+       progress.style.width = percentage + "%";
+       });
+
         $.fn.isInViewport = function() {
           var elementTop = $(this).offset().top;
           var elementBottom = elementTop + $(this).outerHeight();
