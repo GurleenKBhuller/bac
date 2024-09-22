@@ -184,31 +184,43 @@ a.button:active {
       gap:5%;
     }
 
-    .ian{
+    .team-container {
       display: grid;
-      grid-template-columns: 0.75fr 1.5fr;
+      grid-template-columns: 1fr 1fr; /* 2 columns for the first row */
+      gap: 20px; /* Space between items */
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .team-container2{
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr;
     }
     
-    .team2{
+    .ian{
+      text-align: right;
+    }
+
+    .ian .nameinfo{
+      text-align: center;
+      margin-left: 50%;
+    }
+    .barb{
+      text-align: left;
+    }
+    .barb .nameinfo{
+      text-align: center;
+      margin-left: -50%;
+    }
+
+
+    .ianandbarb{
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
     
-    .team3{
-      padding-left: 2%;
-      display: grid;
-      grid-template-columns: 1.5fr 0.75fr 0.75fr 1.5fr;
-      column-gap: 5%;
-    }
-    
-    .barb, .balkirt{
-      display: grid;
-      grid-template-columns: 0.75fr 1.5fr;
-    }
-
-
-    
-    @media (max-width: 992px) {
+   
+   @media (max-width: 992px) {
       .info{
         display: none;
       }
@@ -225,36 +237,28 @@ a.button:active {
       .info{
         display:none;
       }
-      .team2{
-        grid-template-columns: none;
-        grid-template-rows: 1fr 1fr;
+     .ian{
+        text-align: center;
       }
-      .team3 {
-        grid-template-columns: 1fr 1fr;
+      .ian .nameinfo{
+        text-align: center;
+        margin-left: 0%;
+      }
+
+      .barb{
+        text-align: center;
+      }
+      .barb .nameinfo{
+        text-align: center;
+        margin-left: 0%;
+      }
+      .ianimage, .barbimage{
+        width:80% !important;
+      }
+      
+      .ianandbarb{
+        grid-template-columns: none;
         grid-template-rows: auto auto;
-      }
-      .team3 > :nth-child(1) {
-        order: 1; /* Move first element to second position */
-    }
-
-    .team3 > :nth-child(2) {
-        order: 2; /* Keep second element in first position */
-    }
-
-    .team3 > :nth-child(3) {
-        order: 4; /* Keep third element in its original position */
-    }
-
-    .team3 > :nth-child(4) {
-        order: 3; /* Keep fourth element in its original position */
-    }
-
-    .anjali{
-      text-align: right !important;
-    }
-      .ian{
-        grid-template-columns: none;
-        grid-template-rows: 1fr 1fr;
       }
       .counts{
         grid-template-columns: none; 
@@ -527,12 +531,16 @@ a.button:active {
         padding-top: 6% !important;
 
       }
-      .barbpic, .balkiratpic{
-            margin-top: 15%;
-    height: 48vw !important;
-      }
     }
     @media (max-width: 900px) {
+      .team-container{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+      }
+      .team-container2{
+        grid-template-columns: none;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
       .ourvalues {
           grid-template-columns: none;
           grid-template-rows: 1fr 1fr;
@@ -567,6 +575,7 @@ a.button:active {
         grid-template-rows: auto auto auto;
         margin-bottom: 0;
       }
+
 
       .ctop{
         margin-top: 10%;
@@ -780,7 +789,7 @@ a.button:active {
 
   
   </div>
-</div>
+
 <div style="background-color: #005dba;text-align: center;" id="purpose">
   {% comment %} <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding-top: 2.5%;">OUR STORY</div> {% endcomment %}
   <div style="color: white; font-size: 2em; padding: 4%; text-align: center;"><b>We exist to assist organizations, firms and individuals achieve outstanding performance - on terms they define!!!</b></div>
@@ -790,106 +799,96 @@ a.button:active {
   <section id="teamsection">
     <div style="background-color: #ece7e9;">
     <div style="color:#4C8DCF; font-size: 1.5em; font-weight: bold; padding-top: 2.5%; text-align: center;" >MEET OUR TEAM</div>
-<div class="ian">
-  <div>
-    <a class="teamnames" href="https://www.linkedin.com/in/ianangell/" target="_blank">
-      <img src="{%static 'ian.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
-    </a>
-  </div>
 
-
-  <div style="color:#121020c7">
-    <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.65em;">
-      <a class="teamnames" href="https://www.linkedin.com/in/ianangell/" target="_blank">Robert Ian Angell</a>
-    </div>
-    <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.35em; font-style: italic;">
-      Founder and Chair
-    </div>
-    <div style="padding: 5% 8% 0% 5%; font-style: oblique;">
-      <p>Robert Ian Angell realized that the world of financial and growth strategies was a hot 
-        mess while working for a big international corporation. Seeking to make it easier for companies 
-        worldwide to make sense of data, he set on a mission to change the world of strategic advisory and consulting</p>
-        <p>
-          Bob was initially just one man with a laptop and a desire to make people understand financial strategy better and make more informed choices in their investments. Quickly, what was meant to be a side project grew into a viable business with a handful of employees. At first, Bob's main focus was financial analysis, mergers and acquisitions, and investment advice, but slowly the team grew and could focus more on projects 
-          requiring intellectual property protection and defence and organic and inorganic growth for the companies.
-        </p>
-    </div>
-  </div>
-</div>
-</div>
-<div class="team2" style="background-color: #ece7e9;">
-  <div class="barb">
-    <div>
-      <a class="teamnames" href="https://www.linkedin.com/in/barbara-angell-21a584312/" target="_blank">
-        <img src="{%static 'barb.jpg'%}" class="barbpic" style="height: 85%; width: 100%; padding:5%"/>
-      </a>
-    </div>
-    <div style="color:#121020c7">
-      <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
-        <a class="teamnames" href="https://www.linkedin.com/in/barbara-angell-21a584312/" target="_blank">Barb Angell</a>
+    <div class="row">
+      <div class="col-sm-6 text-right mb-3 mb-sm-0">
+        <div class="card" style="background-color: #ece7e9; !important">
+          <div class="card-body ian">
+            <a class="teamnames" href="https://www.linkedin.com/in/ianangell/" target="_blank">
+              <img class="ianimage" src="{%static 'ian.jpg'%}" style="height: 65%; width: 50%; padding:5%;"/>
+            </a>
+            <div style="color:#121020c7;" class="nameinfo">
+              <div class="name" style="font-weight: 650; font-size: 1.65em;">
+                <a class="teamnames" href="https://www.linkedin.com/in/ianangell/" target="_blank">Robert Ian Angell</a>
+              </div>
+              <div class="role" style="font-weight: 400; font-size: 1.35em; font-style: italic;">
+                Founder and Chair
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.05em; font-style: italic;">
-Director      </div>
-      <div style="padding: 5% 8% 0% 5%; font-style: oblique;">
-        <p>Barb is an experienced investment and financial expert with a proven track record in guiding clients toward lucrative opportunities and sound fiscal decisions. Exceptional analytical 
-          skills and deep market knowledge ensure tailored strategies, maximizing returns and fostering long-term financial success.
-          </p>
+      <div class="col-sm-6">
+        <div class="card" style="background-color: #ece7e9; !important">
+          <div class="card-body barb">
+            <a class="teamnames" href="https://www.linkedin.com/in/barbara-angell-21a584312/" target="_blank">
+              <img class="barbimage" src="{%static 'barb.jpg'%}" style="height: 65%; width: 50%; padding:5%;"/>
+            </a>
+          <div style="color:#121020c7;" class="nameinfo">
+            <div class="name" style="font-weight: 650; font-size: 1.65em;">
+              <a class="teamnames" href="https://www.linkedin.com/in/barbara-angell-21a584312/" target="_blank">Barb Angell</a>
+            </div>
+            <div class="role" style="font-weight: 400; font-size: 1.35em; font-style: italic;">
+              Director
+            </div>
+          </div>
+          </div>
+        </div>
       </div>
     </div>
 
-  </div>
-  <div class="balkirt">
-    <div>
-      <a class="teamnames" href="https://www.linkedin.com/in/imbalkirat/" target="_blank">
-        <img src="{%static 'balkirat.jpg'%}" style="height: 85%; width: 100%; padding:5%" class="balkiratpic"/>
-      </a>
-    </div>
-    <div style="color:#121020c7">
-      <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
-        <a class="teamnames" href="https://www.linkedin.com/in/imbalkirat/" target="_blank">Balkirat (Barry) Bhue</a>
+    <div class="row" style="padding: 5%;">
+      <div class="col-sm-4">
+        <div class="card" style="background-color: #ece7e9; !important">
+          <div class="card-body">
+            <a class="teamnames" href="https://www.linkedin.com/in/imbalkirat/" target="_blank">
+              <img src="{%static 'balkirat.jpg'%}" style="height: 70%; width: 80%; padding:5%" class="balkiratpic"/>
+            </a>
+            <div style="color:#121020c7; text-align:center;">
+              <div class="name" style="font-weight: 650; font-size: 1.35em;">
+                <a class="teamnames" href="https://www.linkedin.com/in/imbalkirat/" target="_blank">Balkirat (Barry) Bhue</a>
+              </div>
+              <div class="role" style="font-weight: 400; font-size: 1.05em; font-style: italic;">
+                Intellectual Property Expert and IP Lead
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.05em; font-style: italic;">
-        Intellectual Property Expert and IP Lead
+      <div class="col-sm-4">
+        <div class="card" style="background-color: #ece7e9; !important">
+          <div class="card-body">
+            <a class="teamnames" href="https://www.linkedin.com/in/gurleen-kaur-bhuller/" target="_blank">
+              <img src="{%static 'gurleen.jpg'%}" style="height: 60%; width: 70%; margin-top:5%"/>
+            </a>
+            <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
+              <a class="teamnames" href="https://www.linkedin.com/in/gurleen-kaur-bhuller/" target="_blank">Gurleen Kaur</a>
+            </div>
+            <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.05em; font-style: italic;">
+              Software Engineer
+            </div>
+          
+          </div>
+        </div>
       </div>
-      <div style="padding: 5% 8% 0% 5%; font-style: oblique;">
-        <p>Balkirat is our in-house technical expert with more than a decade's worth of IP consulting expertise. 
-          He collaborates with the R&D teams and 3rd-party partners to integrate patent strategy seamlessly into their 
-          technical offerings, ensuring a holistic solution for clients.
-        </p>
+      <div class="col-sm-4">
+        <div class="card" style="background-color: #ece7e9; !important">
+          <div class="card-body">
+            <a class="teamnames" href="https://www.linkedin.com/in/anjali-k-ba378a130/" target="_blank">
+              <img src="{%static 'anjali.jpg'%}" style="height: 70%; width: 85%; padding:5%"/>
+            </a>
+            <div style="color:#121020c7;" class="anjali">
+              <div class="name" style="font-weight: 650; font-size: 1.35em;">
+                <a class="teamnames" href="https://www.linkedin.com/in/anjali-k-ba378a130/" target="_blank">Anjali Kukreja</a>
+              </div>
+              <div class="role" style="font-weight: 400; font-size: 1.05em; font-style: italic;">
+                Systems and Process Specialist
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</div>
-
-<div class="team3" style="background-color: #ece7e9;">
-  <div style="color:#121020c7; text-align: right;">
-    <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
-      <a class="teamnames" href="https://www.linkedin.com/in/gurleen-kaur-bhuller/" target="_blank">Gurleen Kaur</a>
-    </div>
-    <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.05em; font-style: italic;">
-      Software Engineer
-    </div>
-  </div>
-  <div>
-    <a class="teamnames" href="https://www.linkedin.com/in/gurleen-kaur-bhuller/" target="_blank">
-      <img src="{%static 'gurleen.jpg'%}" style="height: 100%; width: 93%; padding:5%"/>
-    </a>
-  </div>
-  <div>
-    <a class="teamnames" href="https://www.linkedin.com/in/anjali-k-ba378a130/" target="_blank">
-      <img src="{%static 'anjali.jpg'%}" style="height: 100%; width: 100%; padding:5%"/>
-    </a>
-  </div>
-  <div style="color:#121020c7; text-align: left; margin-left: -8%;" class="anjali">
-    <div class="name" style="padding: 5% 0% 0% 5%; font-weight: 650; font-size: 1.35em;">
-      <a class="teamnames" href="https://www.linkedin.com/in/anjali-k-ba378a130/" target="_blank">Anjali Kukreja</a>
-    </div>
-    <div class="role" style="padding: 0% 0% 0% 5%; font-weight: 400; font-size: 1.05em; font-style: italic;">
-      Systems and Process Specialist
-    </div>
-  </div>
-</div>
 </section>
 
    <p></p>
